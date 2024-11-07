@@ -1,94 +1,83 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+  font-family: monospace;
 }
 body {
-  background-image: url(img/bg.gif);
+  background-image: url(img/pantai.gif);
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
   width: 100%;
   height: 100vh;
-  font-size: 10px;
-  display: grid;
+  text-align: center;
 }
 .container {
-  padding: 17%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-areas:
-    "ket ket"
-    "s7 n7"
-    "s8 n8"
-    "s9 n9";
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: ".image .upload";
   gap: 30px;
 }
-.dum {
-  text-align: center;
-  place-self: center;
+
+.image {
+  grid-area: .image;
 }
-.ket {
-  grid-area: ket;
+.image img {
+  width: 60%;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
-.s7 {
-  grid-area: s7;
-}
-.s8 {
-  grid-area: s8;
-}
-.s9 {
-  grid-area: s9;
-}
-.n7 {
-  grid-area: n7;
-}
-.n8 {
-  grid-area: n8;
-}
-.n9 {
-  grid-area: n9;
-}
-h2 {
-  color: yellow;
-  text-shadow: 2px 2px black;
-  font-size: 4em;
-  font-family: Arial, Helvetica, sans-serif;
-}
-a {
-  text-decoration: none;
+.image a {
   color: black;
-  font-size: 3em;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  padding: 5px 10px;
+  text-decoration: none;
   background-color: yellow;
-  border-radius: 4px;
-  font-weight: 800;
+  padding: 12px 23px;
+  margin: 30px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 10px;
 }
-a:hover {
-  background-color: orangered;
+.image a:hover {
+  background-color: red;
+  color: white;
 }
-@media (max-width: 576px) {
+.upload {
+  grid-area: .upload;
+}
+.upload h2 {
+  color: yellow;
+  font-size: 35px;
+  padding-top: 20px;
+  text-shadow: 2px 2px black;
+}
+.upload ul li {
+  list-style: none;
+  margin: 60px;
+}
+.upload a {
+  color: black;
+  text-decoration: none;
+  background-color: yellow;
+  padding: 12px 23px;
+  margin: 30px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.upload a:hover {
+  background-color: red;
+  color: white;
+}
+
+@media (max-width: 768px) {
   .container {
+    display: grid;
+    grid-template-columns: 1fr;
     grid-template-areas:
-      "ket ket"
-      "s7 s7"
-      "s8 s8"
-      "s9 s9"
-      "n7 n7"
-      "n8 n8"
-      "n9 n9";
-    gap: 30px;
-  }
-  h2 {
-    font-size: 1.9em;
-    color: red;
-  }
-  a {
-    font-size: 1.5em;
-    background-color: red;
-  }
-  a:hover {
-    background-color: yellow;
+      ".image"
+      ".upload";
+    gap: 10px;
   }
 }
